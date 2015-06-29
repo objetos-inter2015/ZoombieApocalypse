@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Juego()
+comment0.text=\r\n\ inicializa\ el\ mundo,\ muestra\ los\ objetos\ que\ siempre\ estaran\ ahi.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ verifica\ que\ el\ jugador\ este\ con\ vida,\ y\ al\ mismo\ tiempo\ genera\ zombies\ para\ jugar\r\n
+comment2.params=
+comment2.target=void\ aleatorioDeZombie()
+comment2.text=\r\ngenera\ aleatoriamente\ un\ tipo\ de\ zombie\ y\ lo\ coloca\ en\ una\ de\ las\ 5\ secciones\ horizontales\ tambien\ de\ manera\ aleatoria.\r\ndependiendo\ el\ numero\ de\ zombies\ que\ han\ aparecido,\ esta\ funcion\ aumentara\ tambien\ la\ frecuencia\ con\ la\ que\ estos\ apareccen,\ esto\ hara\ la\ ilusion\ de\ niveles\ \r\nen\ el\ juego.\r\n
+numComments=3
