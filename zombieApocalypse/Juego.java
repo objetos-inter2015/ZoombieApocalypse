@@ -44,14 +44,6 @@ public class Juego extends World
     public void act()
     {
         aleatorioDeZombie();
-        for(int i = 0; i < getHeight(); i++)
-        {
-            listaZombieAt = getObjectsAt(5, i, Zombie.class);
-            if(listaZombieAt != null)
-            {
-                heroe.quitaVida(20);
-            }
-        }
         if(heroe.vida < 0)       
         {            
             removeObject(heroe);
