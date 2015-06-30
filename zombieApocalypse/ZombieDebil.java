@@ -86,7 +86,7 @@ public class ZombieDebil extends Zombie
     }
     public void muevete()
     {
-        if(!isTouching(Heroe.class))
+        if(!isTouching(Heroe.class)  && !isTouching(Barricada.class))
         {
             move(-velocidad);
         }

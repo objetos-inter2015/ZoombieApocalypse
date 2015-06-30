@@ -9,7 +9,7 @@ import javax.swing.*;
 public class Heroe extends Actor
 {   
     int vida, lifebar, puntuacion, daño, balas, balasDisponibles, balasExplosivas, balasCongeladoras, balasPerforadoras, balasE, balasC, balasP;
-    int tipoDeBala = 1, band = 0, bandRecarga = 0, contComido = 0;
+    int tipoDeBala = 1, band = 0, bandRecarga = 0, contComidoN = 0, contComidoF = 0, contComidoD = 0, contComidoXL = 0, contComidoX = 0;
     int x = 6, pts;
     String nombre;
     public Heroe() 
@@ -41,19 +41,19 @@ public class Heroe extends Actor
         {
             band = 0;
             dispara();
-            balas--;
+            balasP--;
         }
         if(Greenfoot.isKeyDown("space") && band >= 10 && balasC > 0 && tipoDeBala == 3)
         {
             band = 0;
             dispara();
-            balas--;
+            balasC--;
         }
         if(Greenfoot.isKeyDown("space") && band >= 10 && balasE > 0 && tipoDeBala == 4)
         {
             band = 0;
             dispara();
-            balas--;
+            balasE--;
         }
         
         if(Greenfoot.isKeyDown("r") && bandRecarga >= 10)
@@ -76,18 +76,7 @@ public class Heroe extends Actor
         {
             tipoDeBala = 4;
         }
-        if(Greenfoot.isKeyDown("5") && puntuacion >= 50)
-        {
-            //incluir la barricada
-        }
-        if(Greenfoot.isKeyDown("6") && puntuacion >= 75)
-        {
-            //incluir la mina
-        }
-        if(Greenfoot.isKeyDown("7") && puntuacion >= 100)
-        {
-            //incluir el rayo laser
-        }
+        
         if(isTouching(PuntosZN.class))
         {
            puntuacion += 4;
@@ -122,7 +111,7 @@ public class Heroe extends Actor
         bandRecarga++;
         muestraStats();
         seComido();
-        contComido++;
+        
     }
     public void dispara()
     {
@@ -294,9 +283,9 @@ public class Heroe extends Actor
      */
     public void seComido()
     {
-        if(isTouching(ZombieNormal.class) && contComido >= 10)
+        if(isTouching(ZombieNormal.class) && contComidoN >= 10)
         {
-            contComido = 0;
+            contComidoN = 0;
             lifebar -= 5;
             if(lifebar <= 0)
             {
@@ -304,9 +293,9 @@ public class Heroe extends Actor
                 vida--;
             }           
         }
-        if(isTouching(ZombieXL.class) && contComido >= 50)
+        if(isTouching(ZombieXL.class) && contComidoXL >= 50)
         {
-            contComido = 0;
+            contComidoXL = 0;
             lifebar -= 30;
             if(lifebar <= 0)
             {
@@ -314,9 +303,9 @@ public class Heroe extends Actor
                 vida--;
             }           
         }
-        if(isTouching(ZombieFuerte.class) && contComido >= 10)
+        if(isTouching(ZombieFuerte.class) && contComidoF >= 10)
         {
-            contComido = 0;
+            contComidoF = 0;
             lifebar -= 10;
             if(lifebar <= 0)
             {
@@ -324,9 +313,9 @@ public class Heroe extends Actor
                 vida--;
             }           
         }
-        if(isTouching(ZombieDebil.class) && contComido >= 2)
+        if(isTouching(ZombieDebil.class) && contComidoD >= 2)
         {
-            contComido = 0;
+            contComidoD = 0;
             lifebar -= 1;
             if(lifebar <= 0)
             {
@@ -334,9 +323,9 @@ public class Heroe extends Actor
                 vida--;
             }           
         }
-        if(isTouching(ZombieX.class) && contComido >= 30)
+        if(isTouching(ZombieX.class) && contComidoX >= 30)
         {
-            contComido = 0;
+            contComidoX = 0;
             lifebar -= 15;
             if(lifebar <= 0)
             {
@@ -344,6 +333,11 @@ public class Heroe extends Actor
                 vida--;
             }           
         }
+        contComidoN++;
+        contComidoXL++;
+        contComidoX++;
+        contComidoF++;
+        contComidoD++;
     }
     public void aumentaBalas(int aumento)
     {
@@ -361,5 +355,9 @@ public class Heroe extends Actor
                 lifebar = 100;
                 vida--;
             }
+    }
+    public void compraItem(int x)
+    {
+        puntuacion -= x;
     }
 }

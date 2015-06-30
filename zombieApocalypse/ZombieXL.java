@@ -98,11 +98,7 @@ public class ZombieXL extends Zombie
     }
     public void muevete()
     {
-        if(isTouching(Heroe.class))
-        {
-        }
-        
-        else
+        if(!isTouching(Heroe.class))       
         {
             if(cicloSalto == 2)
             {
@@ -187,6 +183,12 @@ public class ZombieXL extends Zombie
                 cicloSalto=0;
                 contSalto = 0;
             }
+        }
+        if(isTouching(Heroe.class))
+        {
+            bandSalto=0;
+            cicloSalto=0;
+            contSalto = 0;
         }
     }
 }

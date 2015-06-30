@@ -1,5 +1,6 @@
 import greenfoot.*;
 import java.util.*;
+import javax.swing.*;
 
 /**
  * Write a description of class Escenario here.
@@ -9,26 +10,29 @@ import java.util.*;
  */
 public class Juego extends World
 {
+    
     Heroe heroe;
     int cont, contZ;
     int frecuencia = 200;
-    int ZONA1 = 120,
-    ZONA2 = 200,
-    ZONA3 = 280,
-    ZONA4 = 360,
-    ZONA5 = 440;
+    int ZONA1 = 120, ZONA2 = 200, ZONA3 = 280, ZONA4 = 360, ZONA5 = 440;
     int entrada = 0, cont2 = 0;
     private List<Zombie> listaZombie = new ArrayList<Zombie>();
     private List<Zombie> listaZombieAt = new ArrayList<Zombie>();
     private List<Bala> listaBala = new ArrayList<Bala>();
     private List<Item> listaItem = new ArrayList<Item>();
-  
+    GameOver gm;
+    LineaBarricada lm;
+    int l;
+    int[] inty;
+    int[] intx;
     /**
      * inicializa el mundo, muestra los objetos que siempre estaran ahi.
      */
     public Juego()
     {    
         super(1100, 600, 1); 
+        lm= new LineaBarricada();  
+        addObject(lm, 75, 320);
         heroe = new Heroe();       
         BarricadaIcono barrera = new BarricadaIcono();
         LaserIcono laser = new LaserIcono();
@@ -36,14 +40,32 @@ public class Juego extends World
         addObject(barrera, 50, 50);
         addObject(laser, 150, 50);
         addObject(mina, 250, 50);
-        addObject(heroe, 300, ZONA3);
+        addObject(heroe, 460, ZONA3);
+        gm = new GameOver();
+        inty = new int[5];
+        inty[0] = 170;
+        inty[1] = 250;
+        inty[2] = 330;
+        inty[3] = 410;
+        inty[4] = 490;
+        intx = new int[10];
+        intx[0] = 330;
+        intx[1] = 405;
+        intx[2] = 480;
+        intx[3] = 555;
+        intx[4] = 630;
+        intx[5] = 705;
+        intx[6] = 780;
+        intx[7] = 855;
+        intx[8] = 930;
+        intx[9] = 1005;
+        
     }
     /**
      * verifica que el jugador este con vida, y al mismo tiempo genera zombies para jugar
      */
     public void act()
-    {
-        aleatorioDeZombie();
+    {        
         if(heroe.vida < 0)       
         {            
             removeObject(heroe);
@@ -53,8 +75,38 @@ public class Juego extends World
             removeObjects(listaZombie);
             removeObjects(listaItem);
             removeObjects(listaBala);
-            setBackground("GAME OVER.png");
-        }        
+            Greenfoot.setWorld(gm);           
+        }      
+        else
+        {
+            aleatorioDeZombie();
+            l = lm.toque();
+            heroe.quitaVida(l);
+            l = 0;
+            if(Greenfoot.isKeyDown("5") && heroe.puntuacion >= 50)
+            {
+                Barricada b = new Barricada();
+                String eleccionY = JOptionPane.showInputDialog(null,"En que zona de Y quieres la barricada?(numero de 1 a 5)" ,"Coordenada Y" ,JOptionPane.QUESTION_MESSAGE);
+                String eleccionX = JOptionPane.showInputDialog(null,"En que coordenada de X quieres la barricada?(numero de 1 a 10)" ,"Coordenada X" ,JOptionPane.QUESTION_MESSAGE);
+                try
+                {
+                    addObject(b, intx[Integer.parseInt(eleccionX)-1], inty[Integer.parseInt(eleccionY) - 1]);
+                    heroe.compraItem(50);
+                }
+                catch(ArrayIndexOutOfBoundsException e)
+                {
+                    
+                }
+            }
+            if(Greenfoot.isKeyDown("6") && heroe.puntuacion >= 75)
+            {
+                //incluir la mina
+            }
+            if(Greenfoot.isKeyDown("7") && heroe.puntuacion >= 100)
+            {
+                //incluir el rayo laser
+            }
+        }
     }
     /**
      *genera aleatoriamente un tipo de zombie y lo coloca en una de las 5 secciones horizontales tambien de manera aleatoria.
