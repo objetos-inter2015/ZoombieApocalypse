@@ -115,6 +115,21 @@ public class Heroe extends Actor
            balasDisponibles += 15;
            removeTouching(Ammo.class);
         }
+         if(isTouching(PerforadoraIcono.class))
+        {
+           balasPerforadoras += 15;
+           removeTouching(PerforadoraIcono.class);
+        }
+         if(isTouching(CongeladoraIcono.class))
+        {
+           balasCongeladoras += 10;
+           removeTouching(CongeladoraIcono.class);
+        }
+         if(isTouching(ExplosivaIcono.class))
+        {
+           balasExplosivas += 5;
+           removeTouching(ExplosivaIcono.class);
+        }
         band++;
         bandRecarga++;
         muestraStats();
@@ -242,7 +257,11 @@ public class Heroe extends Actor
         }        
         getWorld().showText("Vidas: " + String.valueOf(vida), 50, 575);
         getWorld().showText("Porcentaje de vida: " + String.valueOf(lifebar) + "%", 220, 575);
-        getWorld().showText("Puntuacion: " + String.valueOf(puntuacion) , 350, 550);
+        getWorld().showText("Puntuacion: " + String.valueOf(puntuacion) , 375, 550);
+        getWorld().showText("Normales (4): " + String.valueOf(balasDisponibles), 550, 550);
+        getWorld().showText("Explosivas(7): " + String.valueOf(balasExplosivas), 750, 575);
+        getWorld().showText("Congeladoras(6): " + String.valueOf(balasCongeladoras), 750, 550);
+        getWorld().showText("Perforadoras(5): " + String.valueOf(balasPerforadoras), 550, 575);
     }
     /**
      * mueve al jugador, verificando que no haya zombies a su derecha o izquierda, si los hay, no lo deja avanzar

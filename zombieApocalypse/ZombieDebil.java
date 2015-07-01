@@ -11,14 +11,19 @@ public class ZombieDebil extends Zombie
     int cont = 0;
     boolean congelado = false, remueve = false;
     int contCongelado = 0;
+    ExplosivaIcono e;
+    CongeladoraIcono c;
+    PerforadoraIcono p;
     public ZombieDebil()
     {
         super(1, 8, 5, 2);
     }  
     public void act()
     {
-        muevete();
-        
+        if(!congelado);
+            muevete();
+        if(contCongelado == 200 && congelado)
+            congelado = false;
         if(isTouching(BalaNormal.class) && cont >= 5)
         {
             vida--;
@@ -33,6 +38,26 @@ public class ZombieDebil extends Zombie
                 {
                     Ammo ammo = new Ammo();
                     getWorld().addObject(ammo, getX(), getY()+20);
+                }
+                if(Greenfoot.getRandomNumber(100) <= 10)
+                {
+                    switch (Greenfoot.getRandomNumber(3))
+                    {
+                        case 0:
+                        e = new ExplosivaIcono();
+                        getWorld().addObject(e, getX()+30, getY()+20);
+                        break;
+                        
+                        case 1:
+                        c = new CongeladoraIcono();
+                        getWorld().addObject(c, getX()+30, getY()+20);
+                        break;
+                        
+                        case 2:
+                        p = new PerforadoraIcono();
+                        getWorld().addObject(p, getX()+30, getY()+20);
+                        break;
+                    }
                 }
             }
         }
@@ -49,6 +74,26 @@ public class ZombieDebil extends Zombie
                 {
                     Ammo ammo = new Ammo();
                     getWorld().addObject(ammo, getX(), getY()+20);
+                }
+                if(Greenfoot.getRandomNumber(100) <= 10)
+                {
+                    switch (Greenfoot.getRandomNumber(3))
+                    {
+                        case 0:
+                        e = new ExplosivaIcono();
+                        getWorld().addObject(e, getX()+30, getY()+20);
+                        break;
+                        
+                        case 1:
+                        c = new CongeladoraIcono();
+                        getWorld().addObject(c, getX()+30, getY()+20);
+                        break;
+                        
+                        case 2:
+                        p = new PerforadoraIcono();
+                        getWorld().addObject(p, getX()+30, getY()+20);
+                        break;
+                    }
                 }
             }
         }
@@ -67,6 +112,26 @@ public class ZombieDebil extends Zombie
                 {
                     Ammo ammo = new Ammo();
                     getWorld().addObject(ammo, getX(), getY()+20);
+                }
+                if(Greenfoot.getRandomNumber(100) <= 10)
+                {
+                    switch (Greenfoot.getRandomNumber(3))
+                    {
+                        case 0:
+                        e = new ExplosivaIcono();
+                        getWorld().addObject(e, getX()+30, getY()+20);
+                        break;
+                        
+                        case 1:
+                        c = new CongeladoraIcono();
+                        getWorld().addObject(c, getX()+30, getY()+20);
+                        break;
+                        
+                        case 2:
+                        p = new PerforadoraIcono();
+                        getWorld().addObject(p, getX()+30, getY()+20);
+                        break;
+                    }
                 }
             }
         }

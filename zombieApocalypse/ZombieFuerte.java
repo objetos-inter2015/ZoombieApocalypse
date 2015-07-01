@@ -20,7 +20,10 @@ public class ZombieFuerte extends Zombie
     }    
     public void act()
     {
-        muevete();
+        if(!congelado);
+            muevete();
+        if(contCongelado == 200 && congelado)
+            congelado = false;
         if(isTouching(BalaNormal.class) && cont >= 5)
         {
             vida--;
@@ -95,10 +98,10 @@ public class ZombieFuerte extends Zombie
         }
         if(isTouching(Congeladora.class) && cont >= 5)
         {
-            vida--;
+            vida -= 2;
             cont = 0;
             congelado = true;
-            removeTouching(Bala.class);
+            removeTouching(Congeladora.class);
             if(vida <= 0)
             {
                 remueve = true;
@@ -133,21 +136,13 @@ public class ZombieFuerte extends Zombie
         if(isTouching(RayoLaser.class))
         {
             remueve = true;
-        }
-        if(congelado)
-        {
-            velocidad = 0;
-            contCongelado++;
-            if(contCongelado == 200)
-                {
-                    velocidad = 4;
-                }
-        }
+        }            
         if(remueve)
         {
             getWorld().removeObject(this);
         }
         cont++;
+        contCongelado++;
     }
     public void muevete()
     {

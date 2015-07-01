@@ -1,4 +1,8 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ act()
-numComments=1
+comment0.target=Explosiva()
+comment1.params=
+comment1.target=void\ act()
+comment2.params=x
+comment2.target=void\ muevete(int)
+numComments=3

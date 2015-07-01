@@ -24,29 +24,7 @@ public class Mina extends Item
             toque = true;
             removeTouching(Zombie.class);
         }
-        /*if(isTouching(ZombieX.class))
-        {
-            toque = true;
-        }
-        if(isTouching(ZombieXL.class))
-        {
-            toque = true;
-        }
-        if(isTouching(ZombieDebil.class))
-        {
-            toque = true;
-        }
-        if(isTouching(ZombieNormal.class))
-        {
-            toque = true;
-        }
-        if(isTouching(Heroe.class))
-        {
-            toque = true;
-        }
-        listaZombies = getNeighbours(5, true, Zombie.class);
-        if(listaZombies != null)
-            toque = true;*/
+        
         if(toque)
         {
             cont++;
