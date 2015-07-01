@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Explosiva here.
+ * esta bala explota al toque con un enemigo y avanza como una bola de fuego
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -37,6 +37,9 @@ public class Explosiva extends Bala
             if(remueve)
                 getWorld().removeObject(this);
     }   
+    /**
+     * sobrecarga del metodo muevete
+     */
     public void muevete(int x)
     {
         move(x);

@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Bala here.
+ * Contiene el constructor de las balas y el metodo muevete
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Arturo GArcia) 
+ * @version (1.0)
  */
 public class Bala extends Actor
 {    

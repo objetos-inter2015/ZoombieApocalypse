@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Barricada here.
+ * Cuando el usuario lo invoca, detiene a cualquier zombie que lo toque, hasta que se acabe su vida
  * 
  * @author (your name) 
  * @version (a version number or a date)

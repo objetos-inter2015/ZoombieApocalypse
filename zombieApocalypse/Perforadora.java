@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Perforadora here.
+ * Mueve la bala cuando el usuario la dispara
  * 
  * @author (your name) 
  * @version (a version number or a date)

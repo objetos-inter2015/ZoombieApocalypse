@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Congeladora here.
+ * congela a los enemigos que toca
  * 
  * @author (your name) 
  * @version (a version number or a date)

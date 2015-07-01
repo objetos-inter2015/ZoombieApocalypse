@@ -15,12 +15,12 @@ public class GameOver extends World
     BotonRecords botonR;
     //private List<String> lista = new ArrayList<String>();
     /**
-     * Constructor for objects of class GameOver.
+     * Cuando el usuario muere, cambia a la pantalla de game over y verifica el click a los botones
      * 
      */
     public GameOver()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        
         super(1100, 600, 1); 
         botonA = new BotonAyuda();
         botonJ = new BotonJugar();
@@ -30,15 +30,7 @@ public class GameOver extends World
         addObject(botonJ, 400, 500);
         addObject(botonR, 680, 500);
         addObject(botonA, 940, 500); 
-        /*
-        lista = UserInfo.getTop(5);
-        Iterator<String> it = lista.iterator();
-        while(it.hasNext())//recorrido de una lista
-        {
-            int x = 1;
-            showText(x + " " + it, 550 + 20, 300 + (20 * (x - 1)));
-            //cad += it.next() + "\n";
-        }*/
+        
     }
     public void act()
     {

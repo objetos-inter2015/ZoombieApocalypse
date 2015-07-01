@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=GameOver()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameOver.\r\n\ \r\n
+comment0.text=\r\n\ Cuando\ el\ usuario\ muere,\ cambia\ a\ la\ pantalla\ de\ game\ over\ y\ verifica\ el\ click\ a\ los\ botones\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
 numComments=2

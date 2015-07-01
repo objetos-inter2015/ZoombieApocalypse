@@ -30,10 +30,13 @@ public class Juego extends World
     boolean laser = false, mina = false;
     /**
      * inicializa el mundo, muestra los objetos que siempre estaran ahi.
+     * reproduce el sonido de fondo
      */
     public Juego()
     {    
         super(1100, 600, 1); 
+        GreenfootSound s = new GreenfootSound("fondo.mp3");
+        s.playLoop();
         lm= new LineaBarricada();  
         addObject(lm, 75, 320);
         heroe = new Heroe();       

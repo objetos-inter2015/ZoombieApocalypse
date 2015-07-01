@@ -35,24 +35,28 @@ public class Heroe extends Actor
         {
             band = 0;
             dispara();
+            Greenfoot.playSound("disparo.mp3");
             balas--;
         }
         if(Greenfoot.isKeyDown("space") && band >= 10 && balasP > 0 && tipoDeBala == 2)
         {
             band = 0;
             dispara();
+            Greenfoot.playSound("disparo.mp3");
             balasP--;
         }
         if(Greenfoot.isKeyDown("space") && band >= 10 && balasC > 0 && tipoDeBala == 3)
         {
             band = 0;
             dispara();
+            Greenfoot.playSound("disparo.mp3");
             balasC--;
         }
         if(Greenfoot.isKeyDown("space") && band >= 10 && balasE > 0 && tipoDeBala == 4)
         {
             band = 0;
             dispara();
+            Greenfoot.playSound("disparo.mp3");
             balasE--;
         }
         if(isTouching(Mina.class))
@@ -67,6 +71,7 @@ public class Heroe extends Actor
         if(Greenfoot.isKeyDown("r") && bandRecarga >= 10)
         {
             recarga();
+            Greenfoot.playSound("recarga.mp3");
         }
         if(Greenfoot.isKeyDown("4"))
         {

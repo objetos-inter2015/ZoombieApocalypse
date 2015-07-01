@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Juego()
-comment0.text=\r\n\ inicializa\ el\ mundo,\ muestra\ los\ objetos\ que\ siempre\ estaran\ ahi.\r\n
+comment0.text=\r\n\ inicializa\ el\ mundo,\ muestra\ los\ objetos\ que\ siempre\ estaran\ ahi.\r\n\ reproduce\ el\ sonido\ de\ fondo\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ verifica\ que\ el\ jugador\ este\ con\ vida,\ y\ al\ mismo\ tiempo\ genera\ zombies\ para\ jugar\r\n

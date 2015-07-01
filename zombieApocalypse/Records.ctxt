@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Records()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Records.\r\n\ \r\n
+comment0.text=\r\n\ muestra\ los\ records\ basandose\ en\ la\ clase\ predefinida\ ScoreBoard\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
 numComments=2

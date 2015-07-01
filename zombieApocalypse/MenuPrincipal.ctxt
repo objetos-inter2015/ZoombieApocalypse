@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=MenuPrincipal()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ MenuPrincipal.\r\n\ \r\n
+comment0.text=\r\n\ este\ es\ el\ menu\ donde\ se\ muestra\ la\ pantalla\ principal\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
 numComments=2

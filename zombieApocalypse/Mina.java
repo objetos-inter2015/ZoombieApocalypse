@@ -2,7 +2,7 @@ import greenfoot.*;
 import java.util.*;
 
 /**
- * Write a description of class Mina here.
+ * Cuando toca a un enemigo, explota en una enorme bola de fuego y si un zombie lo toca muere instantaneamente, si un jugador lo toca este tambien se vera afectado
  * 
  * @author (your name) 
  * @version (a version number or a date)

@@ -13,7 +13,7 @@ public class MenuPrincipal extends World
     Boton boton;
     BotonRecords botonR;
     /**
-     * Constructor for objects of class MenuPrincipal.
+     * este es el menu donde se muestra la pantalla principal
      * 
      */
     public MenuPrincipal()

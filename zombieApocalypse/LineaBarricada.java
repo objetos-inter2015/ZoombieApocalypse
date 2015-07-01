@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class LineaBarricada here.
+ * sirve para saber cuando un zombie ha entrado a la casa del jugador
  * 
  * @author (your name) 
  * @version (a version number or a date)

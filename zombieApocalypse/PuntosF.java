@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class PuntosF here.
+ * Contiene puntos que el usuario tiene que recoger, desaparece a los 4 segundos
  * 
  * @author (your name) 
  * @version (a version number or a date)

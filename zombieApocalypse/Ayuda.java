@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Ayuda here.
+ * Muestra la pantalla de ayuda para el usuario
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -29,6 +29,9 @@ public class Ayuda extends World
         addObject(botonR, 680, 500);
         addObject(botonA, 940, 500);
     }
+    /**
+     * verifica constantemente si el usuario ha dado click a algun boton
+     */
     public void act()
     {
         if(Greenfoot.mouseClicked(boton))

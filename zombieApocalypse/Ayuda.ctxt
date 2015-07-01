@@ -4,4 +4,5 @@ comment0.target=Ayuda()
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Ayuda.\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ verifica\ constantemente\ si\ el\ usuario\ ha\ dado\ click\ a\ algun\ boton\r\n
 numComments=2

@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed Jul 01 01:54:42 CDT 2015
+#Wed Jul 01 02:33:52 CDT 2015
 target24.type=ClassTarget
 class.BotonRecords.superclass=Boton
 target16.name=LaserIcono
@@ -283,6 +283,7 @@ target2.editor.y=0
 target2.editor.x=0
 dependency36.from=ZombieX
 class.Heroe.image=AVATAR.png
+publish.updateDesc=Ahora los records funcionan\!\!\!
 dependency150.to=PerforadoraIcono
 target18.height=50
 target13.width=80

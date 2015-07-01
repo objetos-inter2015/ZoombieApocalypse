@@ -5,4 +5,5 @@ comment1.params=
 comment1.target=void\ act()
 comment2.params=x
 comment2.target=void\ muevete(int)
+comment2.text=\r\n\ sobrecarga\ del\ metodo\ muevete\r\n
 numComments=3

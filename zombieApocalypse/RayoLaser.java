@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class RayoLaser here.
+ * este item mata a cualquier zombie que toca, cuando lo invoca el usuario
  * 
  * @author (your name) 
  * @version (a version number or a date)
