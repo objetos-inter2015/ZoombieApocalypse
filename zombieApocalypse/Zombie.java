@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Zombie here.
+ * Contiene el constructor para todos los zombies
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Arturo Garcia) 
+ * @version (1.0)
  */
 public class Zombie extends Actor
 {

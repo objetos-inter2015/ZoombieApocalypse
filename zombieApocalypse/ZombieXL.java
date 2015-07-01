@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class ZombieXL here.
+ * Crea al zombie XL
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Arturo Garcia) 
+ * @version (1.0)
  */
 public class ZombieXL extends Zombie
 {
@@ -165,6 +165,9 @@ public class ZombieXL extends Zombie
             getWorld().removeObject(this);
         }
     }
+    /**
+     * sobrecarga del metodo muevete del padre que hace brincar a este zombie
+     */
     public void muevete()
     {
         if(!isTouching(Heroe.class))       

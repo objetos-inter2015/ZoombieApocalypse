@@ -2,6 +2,7 @@ import greenfoot.*;
 import javax.swing.*;
 
 /**
+ * Crea al Jugador del juego
  * 
  * @author (Arturo Garcia Perez) 
  * @version (1.0)
@@ -141,6 +142,9 @@ public class Heroe extends Actor
         seComido();
         
     }
+    /**
+     * dispara dependiendo de la municion que el usuario tenga seleccionada
+     */
     public void dispara()
     {
         switch(tipoDeBala)
@@ -371,14 +375,23 @@ public class Heroe extends Actor
         contComidoF++;
         contComidoD++;
     }
+    /**
+     * aumenta el tamaño del cargador del jugador
+     */
     public void aumentaBalas(int aumento)
     {
         x += aumento;
     }
+    /**
+     * aumenta el numero de balas disponibles
+     */
     public void aumentaMunicion(int x)
     {
         balasDisponibles += x;
     }
+    /**
+     * quita vida al jugador
+     */
     public void quitaVida(int x)
     {
         lifebar -= x;
@@ -388,6 +401,9 @@ public class Heroe extends Actor
                 vida--;
             }
     }
+    /**
+     * quita puntuacion cuando el usuario compra un item
+     */
     public void compraItem(int x)
     {
         puntuacion -= x;

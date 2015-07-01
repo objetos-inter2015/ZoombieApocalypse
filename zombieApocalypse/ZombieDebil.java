@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class ZombieDebil here.
+ * Crea al zombie Debil
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Arturo Garcia) 
+ * @version (1.0)
  */
 public class ZombieDebil extends Zombie
 {

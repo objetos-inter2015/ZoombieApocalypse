@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class ZombieX here.
+ * Crea al zombie X
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Arturo Garcia) 
+ * @version (1.0)
  */
 public class ZombieX extends Zombie
 {
@@ -155,6 +155,9 @@ public class ZombieX extends Zombie
         
         cont++;
     }
+    /**
+     * sobrecarga del metodo muevete del padre
+     */
     public void muevete()
     {
         if(!isTouching(Heroe.class) && !isTouching(Barricada.class))
