@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.*;
 
 /**
  * Write a description of class Records here.
@@ -12,6 +13,7 @@ public class Records extends World
     BotonJugar botonJ;
     Boton boton;
     BotonRecords botonR;
+    private List<UserInfo> lista = new ArrayList<UserInfo>();
     /**
      * Constructor for objects of class Records.
      * 
@@ -28,9 +30,20 @@ public class Records extends World
         addObject(botonJ, 400, 500);
         addObject(botonR, 680, 500);
         addObject(botonA, 940, 500);
+        /*
+        lista = UserInfo.getTop(5);
+        int x = 1;
+        Iterator<UserInfo> it = lista.iterator();
+        while(it.hasNext())//recorrido de una lista
+        {
+            showText(x + " " + String.valueOf(it.next()), 550, 300 + (20 * (x - 1)));
+            //cad += it.next() + "\n";
+        }*/
+        addObject(new ScoreBoard(400, 400), getWidth() / 2 - 100, getHeight() / 2 - 30);
     }
     public void act()
     {
+        
         if(Greenfoot.mouseClicked(boton))
         {
             MenuPrincipal menu = new MenuPrincipal();

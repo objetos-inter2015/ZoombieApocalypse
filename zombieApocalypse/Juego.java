@@ -9,8 +9,7 @@ import javax.swing.*;
  * @version (1.0)
  */
 public class Juego extends World
-{
-    
+{    
     Heroe heroe;
     int cont, contZ;
     int frecuencia = 200;
@@ -62,7 +61,8 @@ public class Juego extends World
         intx[6] = 780;
         intx[7] = 855;
         intx[8] = 930;
-        intx[9] = 1005;        
+        intx[9] = 1005;
+        
     }
     /**
      * verifica que el jugador este con vida, y al mismo tiempo genera zombies para jugar
@@ -70,14 +70,25 @@ public class Juego extends World
     public void act()
     {        
         if(heroe.vida < 0)       
-        {            
+        {     
+            
+            if (UserInfo.isStorageAvailable()) 
+            {
+                UserInfo myInfo = UserInfo.getMyInfo();
+                if (heroe.puntuacion > myInfo.getScore()) 
+                {
+                    myInfo.setScore(heroe.puntuacion);
+                    myInfo.setString(0, heroe.nombre);
+                    myInfo.store();  // write back to server
+                }
+            }
             removeObject(heroe);
             listaZombie = getObjects(Zombie.class);
             listaBala = getObjects(Bala.class);
             listaItem = getObjects(Item.class);
             removeObjects(listaZombie);
             removeObjects(listaItem);
-            removeObjects(listaBala);
+            removeObjects(listaBala);          
             Greenfoot.setWorld(gm);           
         }      
         else

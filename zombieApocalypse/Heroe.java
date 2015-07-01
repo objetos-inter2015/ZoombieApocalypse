@@ -26,7 +26,7 @@ public class Heroe extends Actor
            balasE = 0;
            balasC = 0;
            balasP = 0;
-           //nombre = JOptionPane.showInputDialog(null,"Cual es tu nombre valiente caballero?" ,"Nombre" ,JOptionPane.QUESTION_MESSAGE);
+           nombre = JOptionPane.showInputDialog(null,"Cual es tu nombre valiente caballero?" ,"Nombre" ,JOptionPane.QUESTION_MESSAGE);
     }  
     public void act()
     {        

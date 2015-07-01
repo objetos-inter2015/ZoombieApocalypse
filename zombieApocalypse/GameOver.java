@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.*;
 
 /**
  * Write a description of class GameOver here.
@@ -12,6 +13,7 @@ public class GameOver extends World
     BotonJugar botonJ;
     Boton boton;
     BotonRecords botonR;
+    //private List<String> lista = new ArrayList<String>();
     /**
      * Constructor for objects of class GameOver.
      * 
@@ -27,7 +29,16 @@ public class GameOver extends World
         addObject(boton, 120, 500);
         addObject(botonJ, 400, 500);
         addObject(botonR, 680, 500);
-        addObject(botonA, 940, 500);
+        addObject(botonA, 940, 500); 
+        /*
+        lista = UserInfo.getTop(5);
+        Iterator<String> it = lista.iterator();
+        while(it.hasNext())//recorrido de una lista
+        {
+            int x = 1;
+            showText(x + " " + it, 550 + 20, 300 + (20 * (x - 1)));
+            //cad += it.next() + "\n";
+        }*/
     }
     public void act()
     {
