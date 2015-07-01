@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.*;
 
 /**
  * Write a description of class Mina here.
@@ -8,12 +9,52 @@ import greenfoot.*;
  */
 public class Mina extends Item
 {
-    /**
-     * Act - do whatever the Mina wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    boolean toque;
+    int cont;
+    private List<Zombie> listaZombies = new ArrayList<Zombie>();
+    Mina()
+    {
+        cont = 0;
+        toque = false;
+    }
     public void act() 
     {
-        // Add your action code here.
+        if(isTouching(Zombie.class))
+        {
+            toque = true;
+            removeTouching(Zombie.class);
+        }
+        /*if(isTouching(ZombieX.class))
+        {
+            toque = true;
+        }
+        if(isTouching(ZombieXL.class))
+        {
+            toque = true;
+        }
+        if(isTouching(ZombieDebil.class))
+        {
+            toque = true;
+        }
+        if(isTouching(ZombieNormal.class))
+        {
+            toque = true;
+        }
+        if(isTouching(Heroe.class))
+        {
+            toque = true;
+        }
+        listaZombies = getNeighbours(5, true, Zombie.class);
+        if(listaZombies != null)
+            toque = true;*/
+        if(toque)
+        {
+            cont++;
+            setImage("explocionMina.png");
+            if(cont >= 100)
+            {
+                getWorld().removeObject(this);
+            }
+        }
     }    
 }

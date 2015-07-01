@@ -20,12 +20,13 @@ public class ZombieNormal extends Zombie
     public void act()
     {
         muevete();
+        
         if(isTouching(BalaNormal.class) && cont >= 5)
         {
             vida--;
             cont = 0;
             removeTouching(BalaNormal.class);
-            if(vida == 0)
+            if(vida <= 0)
             {
                 remueve = true;
                 PuntosZN pts = new PuntosZN();
@@ -42,7 +43,7 @@ public class ZombieNormal extends Zombie
         {
             vida -= 3;
             cont = 0;
-            if(vida == 0)
+            if(vida <= 0)
             {
                 PuntosZN pts = new PuntosZN();
                 getWorld().addObject(pts, getX(), getY());
@@ -61,7 +62,7 @@ public class ZombieNormal extends Zombie
             cont = 0;
             congelado = true;
             removeTouching(Bala.class);
-            if(vida == 0)
+            if(vida <= 0)
             {
                 remueve = true;
                 PuntosZN pts = new PuntosZN();
@@ -73,7 +74,10 @@ public class ZombieNormal extends Zombie
                 }
             }
         }
-        
+        if(isTouching(RayoLaser.class))
+        {
+            remueve = true;
+        }
         if(congelado)
         {
             velocidad = 0;

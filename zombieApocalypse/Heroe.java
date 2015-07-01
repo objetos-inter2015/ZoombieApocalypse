@@ -55,24 +55,32 @@ public class Heroe extends Actor
             dispara();
             balasE--;
         }
-        
+        if(isTouching(Mina.class))
+        {
+            lifebar -= 20;
+            if(lifebar <= 0)
+            {
+                vida--;
+                lifebar = 100;
+            }
+        }
         if(Greenfoot.isKeyDown("r") && bandRecarga >= 10)
         {
             recarga();
         }
-        if(Greenfoot.isKeyDown("1"))
+        if(Greenfoot.isKeyDown("4"))
         {
             tipoDeBala = 1;
         }
-        if(Greenfoot.isKeyDown("2"))
+        if(Greenfoot.isKeyDown("5"))
         {
             tipoDeBala = 2;
         }
-        if(Greenfoot.isKeyDown("3"))
+        if(Greenfoot.isKeyDown("6"))
         {
             tipoDeBala = 3;
         }
-        if(Greenfoot.isKeyDown("4"))
+        if(Greenfoot.isKeyDown("7"))
         {
             tipoDeBala = 4;
         }
@@ -104,7 +112,7 @@ public class Heroe extends Actor
         }
         if(isTouching(Ammo.class))
         {
-           balasDisponibles += 20;
+           balasDisponibles += 15;
            removeTouching(Ammo.class);
         }
         band++;

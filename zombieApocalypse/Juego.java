@@ -22,9 +22,13 @@ public class Juego extends World
     private List<Item> listaItem = new ArrayList<Item>();
     GameOver gm;
     LineaBarricada lm;
-    int l;
+    int l, contLaser= 0;
     int[] inty;
     int[] intx;
+    RayoLaser rl;
+    Mina m;
+    int contMina = 0;
+    boolean laser = false, mina = false;
     /**
      * inicializa el mundo, muestra los objetos que siempre estaran ahi.
      */
@@ -58,8 +62,7 @@ public class Juego extends World
         intx[6] = 780;
         intx[7] = 855;
         intx[8] = 930;
-        intx[9] = 1005;
-        
+        intx[9] = 1005;        
     }
     /**
      * verifica que el jugador este con vida, y al mismo tiempo genera zombies para jugar
@@ -83,7 +86,7 @@ public class Juego extends World
             l = lm.toque();
             heroe.quitaVida(l);
             l = 0;
-            if(Greenfoot.isKeyDown("5") && heroe.puntuacion >= 50)
+            if(Greenfoot.isKeyDown("1") && heroe.puntuacion >= 50)
             {
                 Barricada b = new Barricada();
                 String eleccionY = JOptionPane.showInputDialog(null,"En que zona de Y quieres la barricada?(numero de 1 a 5)" ,"Coordenada Y" ,JOptionPane.QUESTION_MESSAGE);
@@ -97,15 +100,59 @@ public class Juego extends World
                 {
                     
                 }
+                catch(NumberFormatException e2)
+                {
+                    
+                }
             }
-            if(Greenfoot.isKeyDown("6") && heroe.puntuacion >= 75)
+            if(Greenfoot.isKeyDown("3") && heroe.puntuacion >= 75)
             {
-                //incluir la mina
+                m = new Mina();
+                String eleccionY = JOptionPane.showInputDialog(null,"En que zona de Y quieres la barricada?(numero de 1 a 5)" ,"Coordenada Y" ,JOptionPane.QUESTION_MESSAGE);
+                String eleccionX = JOptionPane.showInputDialog(null,"En que coordenada de X quieres la barricada?(numero de 1 a 10)" ,"Coordenada X" ,JOptionPane.QUESTION_MESSAGE);
+                try
+                {
+                    addObject(m, intx[Integer.parseInt(eleccionX)-1] - 75, inty[Integer.parseInt(eleccionY) - 1]);
+                    contMina = 0;
+                    heroe.compraItem(75);
+                }
+                catch(ArrayIndexOutOfBoundsException e)
+                {
+                    
+                }
+                catch(NumberFormatException e2)
+                {
+                    
+                }
             }
-            if(Greenfoot.isKeyDown("7") && heroe.puntuacion >= 100)
+            if(Greenfoot.isKeyDown("2") && heroe.puntuacion >= 100)
+            {                
+                rl = new RayoLaser();
+                String eleccionY = JOptionPane.showInputDialog(null,"En que zona de Y quieres la barricada?(numero de 1 a 5)" ,"Coordenada Y" ,JOptionPane.QUESTION_MESSAGE);
+                try
+                {
+                    addObject(rl, intx[0] + 440, inty[Integer.parseInt(eleccionY) - 1]);
+                    contLaser = 0;
+                    laser = true;
+                    heroe.compraItem(100);
+                }
+                catch(ArrayIndexOutOfBoundsException e)
+                {
+                    
+                }
+                catch(NumberFormatException e2)
+                {
+                    
+                }
+            }
+            if(laser)
             {
-                //incluir el rayo laser
-            }
+                contLaser++;
+                if(contLaser == 300)
+                {
+                    removeObject(rl);
+                }
+            }          
         }
     }
     /**

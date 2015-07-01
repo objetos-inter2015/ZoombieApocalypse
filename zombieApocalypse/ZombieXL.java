@@ -17,16 +17,13 @@ public class ZombieXL extends Zombie
     }
     public void act()
     {
-        if(!isTouching(Heroe.class))
-        {
-            muevete();
-        }
+        
         if(isTouching(BalaNormal.class) && cont >= 5)
         {
             vida--;
             cont = 0;
             removeTouching(BalaNormal.class);
-            if(vida == 0)
+            if(vida <= 0)
             {
                 PuntosXL pts = new PuntosXL();
                 getWorld().addObject(pts, getX(), getY());
@@ -42,7 +39,7 @@ public class ZombieXL extends Zombie
         {
             vida -= 3;
             cont = 0;
-            if(vida == 0)
+            if(vida <= 0)
             {
                 PuntosXL pts = new PuntosXL();
                 getWorld().addObject(pts, getX(), getY());
@@ -60,7 +57,7 @@ public class ZombieXL extends Zombie
             cont = 0;
             congelado = true;
             removeTouching(Bala.class);
-            if(vida == 0)
+            if(vida <= 0)
             {
                 PuntosXL pts = new PuntosXL();
                 getWorld().addObject(pts, getX(), getY());
@@ -72,6 +69,14 @@ public class ZombieXL extends Zombie
                 }
             }
         }
+        if(isTouching(RayoLaser.class))
+        {
+            remueve = true;
+        }
+        if(isTouching(Mina.class))
+        {
+            remueve = true;
+        }
         if(congelado)
         {
             velocidad = 0;
@@ -80,8 +85,7 @@ public class ZombieXL extends Zombie
                 {
                     velocidad = 4;
                 }
-        }
-        
+        }    
         if(contSalto >= 100)
             bandSalto = 1;
         if(bandSalto == 1)

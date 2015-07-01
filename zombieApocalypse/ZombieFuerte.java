@@ -11,6 +11,9 @@ public class ZombieFuerte extends Zombie
     int cont = 0;
     boolean congelado = false, remueve = false;
     int contCongelado = 0;
+    ExplosivaIcono e;
+    CongeladoraIcono c;
+    PerforadoraIcono p;
     public ZombieFuerte()
     {
         super(5, 4, 10, 5);
@@ -23,7 +26,7 @@ public class ZombieFuerte extends Zombie
             vida--;
             cont = 0;
             removeTouching(BalaNormal.class);
-            if(vida == 0)
+            if(vida <= 0)
             {
                 PuntosF pts = new PuntosF();
                 getWorld().addObject(pts, getX(), getY());
@@ -33,13 +36,33 @@ public class ZombieFuerte extends Zombie
                     Ammo ammo = new Ammo();
                     getWorld().addObject(ammo, getX(), getY()+20);
                 }
+                if(Greenfoot.getRandomNumber(100) <= 10)
+                {
+                    switch (Greenfoot.getRandomNumber(3))
+                    {
+                        case 0:
+                        e = new ExplosivaIcono();
+                        getWorld().addObject(e, getX()+30, getY()+20);
+                        break;
+                        
+                        case 1:
+                        c = new CongeladoraIcono();
+                        getWorld().addObject(c, getX()+30, getY()+20);
+                        break;
+                        
+                        case 2:
+                        p = new PerforadoraIcono();
+                        getWorld().addObject(p, getX()+30, getY()+20);
+                        break;
+                    }
+                }
             }
         }
         if(isTouching(Perforadora.class) && cont >= 5)
         {
             vida -= 3;
             cont = 0;
-            if(vida == 0)
+            if(vida <= 0)
             {
                 remueve = true;
                 PuntosF pts = new PuntosF();
@@ -48,6 +71,25 @@ public class ZombieFuerte extends Zombie
                 {
                     Ammo ammo = new Ammo();
                     getWorld().addObject(ammo, getX(), getY()+20);
+                }
+                if(Greenfoot.getRandomNumber(100) <= 10)
+                {
+                    int bal = Greenfoot.getRandomNumber(3);
+                    switch (bal)
+                    {
+                        case 0:
+                        e = new ExplosivaIcono();
+                        getWorld().addObject(e, getX()+30, getY()+20);
+                        break;
+                        case 1:
+                        c = new CongeladoraIcono();
+                        getWorld().addObject(c, getX()+30, getY()+20);
+                        break;
+                        case 2:
+                        p = new PerforadoraIcono();
+                        getWorld().addObject(p, getX()+30, getY()+20);
+                        break;
+                    }
                 }
             }
         }
@@ -57,7 +99,7 @@ public class ZombieFuerte extends Zombie
             cont = 0;
             congelado = true;
             removeTouching(Bala.class);
-            if(vida == 0)
+            if(vida <= 0)
             {
                 remueve = true;
                 PuntosF pts = new PuntosF();
@@ -67,7 +109,30 @@ public class ZombieFuerte extends Zombie
                     Ammo ammo = new Ammo();
                     getWorld().addObject(ammo, getX(), getY()+20);
                 }
+                if(Greenfoot.getRandomNumber(100) <= 10)
+                {
+                    int bal = Greenfoot.getRandomNumber(3);
+                    switch (bal)
+                    {
+                        case 0:
+                        e = new ExplosivaIcono();
+                        getWorld().addObject(e, getX()+30, getY()+20);
+                        break;
+                        case 1:
+                        c = new CongeladoraIcono();
+                        getWorld().addObject(c, getX()+30, getY()+20);
+                        break;
+                        case 2:
+                        p = new PerforadoraIcono();
+                        getWorld().addObject(p, getX()+30, getY()+20);
+                        break;
+                    }
+                }
             }
+        }
+        if(isTouching(RayoLaser.class))
+        {
+            remueve = true;
         }
         if(congelado)
         {
