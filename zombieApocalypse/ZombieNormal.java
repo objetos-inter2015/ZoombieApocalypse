@@ -15,6 +15,8 @@ public class ZombieNormal extends Zombie
     ExplosivaIcono e;
     CongeladoraIcono c;
     PerforadoraIcono p;
+    int z = 0;
+    String[] ZOMBIE = {"FUERTE1.png", "FUERTE2.png", "FUERTE3.png", "FUERTE4.png"};
     public ZombieNormal()
     {
         super(3, 4, 5, 4);//vida, velocidad, daño, puntos
@@ -162,6 +164,10 @@ public class ZombieNormal extends Zombie
         if(!isTouching(Heroe.class) && !isTouching(Barricada.class))
         {
             move(-velocidad);
+            setImage(ZOMBIE[z]);
+            z++;
+            if(z > 3)
+                z = 0;
         }
     }
 }

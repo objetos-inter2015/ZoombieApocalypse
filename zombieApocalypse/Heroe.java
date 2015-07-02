@@ -13,6 +13,16 @@ public class Heroe extends Actor
     int tipoDeBala = 1, band = 0, bandRecarga = 0, contComidoN = 0, contComidoF = 0, contComidoD = 0, contComidoXL = 0, contComidoX = 0;
     int x = 6, pts;
     String nombre;
+    String[] AVATAR = {"AVATAR 1.png", "AVATAR 2.png", "AVATAR 3.png", "AVATAR 4.png"};
+    String[] AVATAR90 = {"90 1.png", "90 2.png", "90 3.png", "90 4.png"};
+    String[] AVATAR180 = {"180 1.png", "180 2.png", "180 3.png", "180 4.png"};
+    String[] AVATAR270 = {"270 1.png", "270 2.png", "270 3.png", "270 4.png"};
+    /*AVATAR[0] = "AVATAR 1.png";
+    AVATAR[1] = "AVATAR 2.png";
+    AVATAR[2] = "AVATAR 3.png";
+    AVATAR[3] = "AVATAR 4.png";*/
+    int av = 0;
+        
     public Heroe() 
     {
            vida = 3;
@@ -282,7 +292,12 @@ public class Heroe extends Actor
             if(getY() > 100)
             {
                 setRotation(270);
-                setImage("AVATAR270.png");
+                setImage(AVATAR90[av]);
+                av++;
+                if(av > 3)
+                {
+                    av = 0;
+                }
                 move(5);
             }           
         }
@@ -291,7 +306,12 @@ public class Heroe extends Actor
             if(getY() < 450)
             {                
                 setRotation(90);
-                setImage("AVATAR90.png");
+                setImage(AVATAR270[av]);
+                av++;
+                if(av > 3)
+                {
+                    av = 0;
+                }
                 move(5);
             }
         }
@@ -300,7 +320,12 @@ public class Heroe extends Actor
             if(getX() > 200)
             {                
                 setRotation(180);
-                setImage("AVATAR180.png");
+                setImage(AVATAR180[av]);
+                av++;
+                if(av > 3)
+                {
+                    av = 0;
+                }
                 move(5); 
             }
         }
@@ -309,7 +334,12 @@ public class Heroe extends Actor
             if(getX() < 1050)
             {
                 setRotation(0);
-                setImage("AVATAR.png");
+                setImage(AVATAR[av]);
+                av++;
+                if(av > 3)
+                {
+                    av = 0;
+                }
                 move(5);   
             }          
         }

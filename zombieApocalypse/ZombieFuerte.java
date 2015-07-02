@@ -14,6 +14,8 @@ public class ZombieFuerte extends Zombie
     ExplosivaIcono e;
     CongeladoraIcono c;
     PerforadoraIcono p;
+    int z = 0;
+    String[] ZOMBIE = {"FUERTE1.png", "FUERTE2.png", "FUERTE3.png", "FUERTE4.png"};
     public ZombieFuerte()
     {
         super(5, 4, 10, 5);
@@ -152,6 +154,10 @@ public class ZombieFuerte extends Zombie
         if(!isTouching(Heroe.class) && !isTouching(Barricada.class))
         {
             move(-velocidad);
+            setImage(ZOMBIE[z]);
+            z++;
+            if(z > 3)
+                z = 0;
         }
     }
 }

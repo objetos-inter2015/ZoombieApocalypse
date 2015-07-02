@@ -14,6 +14,8 @@ public class ZombieDebil extends Zombie
     ExplosivaIcono e;
     CongeladoraIcono c;
     PerforadoraIcono p;
+    int z = 0;
+    String[] ZOMBIE = {"DEBIL1.png", "DEBIL2.png", "DEBIL3.png", "DEBIL4.png"};
     public ZombieDebil()
     {
         super(1, 8, 5, 2);
@@ -143,7 +145,7 @@ public class ZombieDebil extends Zombie
         {
             velocidad = 0;
             contCongelado++;
-            if(contCongelado == 200)
+            if(contCongelado == 300)
                 {
                     velocidad = 4;
                 }
@@ -156,9 +158,13 @@ public class ZombieDebil extends Zombie
     }
     public void muevete()
     {
-        if(!isTouching(Heroe.class)  && !isTouching(Barricada.class))
+        if(!isTouching(Heroe.class) && !isTouching(Barricada.class))
         {
             move(-velocidad);
+            setImage(ZOMBIE[z]);
+            z++;
+            if(z > 3)
+                z = 0;
         }
     }
 }

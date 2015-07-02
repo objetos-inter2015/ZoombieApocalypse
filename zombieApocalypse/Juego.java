@@ -27,6 +27,7 @@ public class Juego extends World
     RayoLaser rl;
     Mina m;
     int contMina = 0;
+    GreenfootSound s;
     boolean laser = false, mina = false;
     /**
      * inicializa el mundo, muestra los objetos que siempre estaran ahi.
@@ -35,7 +36,8 @@ public class Juego extends World
     public Juego()
     {    
         super(1100, 600, 1); 
-        GreenfootSound s = new GreenfootSound("fondo.mp3");
+        showText("NIVEL 1", 800, 50);
+        s = new GreenfootSound("fondo.mp3");
         s.playLoop();
         lm= new LineaBarricada();  
         addObject(lm, 75, 320);
@@ -91,7 +93,8 @@ public class Juego extends World
             listaItem = getObjects(Item.class);
             removeObjects(listaZombie);
             removeObjects(listaItem);
-            removeObjects(listaBala);          
+            removeObjects(listaBala); 
+            s.stop();
             Greenfoot.setWorld(gm);           
         }      
         else
@@ -178,6 +181,7 @@ public class Juego extends World
     {
         if(contZ == 10 && entrada == 0 && cont2 > 10)
         {
+            showText("NIVEL 2", 800, 50);
             frecuencia = 150;
             heroe.aumentaBalas(2);
             heroe.aumentaMunicion(10);
@@ -186,6 +190,7 @@ public class Juego extends World
         }
         if(contZ == 30 && entrada == 1 && cont2 > 10)
         {
+            showText("NIVEL 3", 800, 50);
             frecuencia = 125;
             heroe.aumentaBalas(2);
             heroe.aumentaMunicion(20);
@@ -194,6 +199,7 @@ public class Juego extends World
         }
         if(contZ == 50 && entrada == 2 && cont2 > 10)
         {
+            showText("NIVEL 4", 800, 50);
             frecuencia = 100;
             heroe.aumentaBalas(2);
             heroe.aumentaMunicion(30);
@@ -202,6 +208,7 @@ public class Juego extends World
         }
         if(contZ >= 70 && entrada == 3 && cont2 > 10)
         {
+            showText("NIVEL 5", 800, 50);
             frecuencia = 75;
             heroe.aumentaBalas(2);
             heroe.aumentaMunicion(40);
@@ -210,12 +217,33 @@ public class Juego extends World
         }
         if(contZ >= 100 && entrada == 4 && cont2 > 10)
         {
+            showText("NIVEL 6", 800, 50);
             frecuencia = 75;
             heroe.aumentaBalas(2);
             heroe.aumentaMunicion(40);
             entrada++;
             cont2 = 0;
         }
+        if(contZ >= 130 && entrada == 5 && cont2 > 10)
+        {
+            showText("NIVEL 7", 800, 50);
+            frecuencia = 50;
+            heroe.aumentaBalas(2);
+            heroe.aumentaMunicion(40);
+            entrada++;
+            cont2 = 0;
+        }
+        if(contZ >= 160 && entrada == 6 && cont2 > 10)
+        {
+            showText("NIVEL 8! ES HORA DEL PANICO", 800, 50);
+            frecuencia = 25;
+            heroe.aumentaBalas(4);
+            heroe.aumentaMunicion(50);
+            entrada++;
+            cont2 = 0;
+        }
+        if(contZ >= 191)
+            heroe.vida = -1;
         if(cont > frecuencia)
         {
             int tipoZombie = Greenfoot.getRandomNumber(5);

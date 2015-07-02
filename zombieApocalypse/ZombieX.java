@@ -14,6 +14,8 @@ public class ZombieX extends Zombie
     ExplosivaIcono e;
     CongeladoraIcono c;
     PerforadoraIcono p;
+    int z = 0;
+    String[] ZOMBIE = {"X1.png", "X2.png", "X3.png", "X4.png"};
     public ZombieX()
     {
         super(7, 2, 15, 7);
@@ -163,6 +165,10 @@ public class ZombieX extends Zombie
         if(!isTouching(Heroe.class) && !isTouching(Barricada.class))
         {
             move(-velocidad);
+            setImage(ZOMBIE[z]);
+            z++;
+            if(z > 3)
+                z = 0;
         }
     }
 }

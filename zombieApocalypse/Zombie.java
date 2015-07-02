@@ -16,5 +16,12 @@ public class Zombie extends Actor
         velocidad = vel;
         daño = damage;
         puntos = pts;
-    }    
+    }
+    public void muevete()
+    {
+        if(!isTouching(Heroe.class))
+        {
+            move(-velocidad);
+        }
+    }
 }

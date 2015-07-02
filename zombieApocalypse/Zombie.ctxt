@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.params=v\ vel\ damage\ pts
 comment0.target=Zombie(int,\ int,\ int,\ int)
-numComments=1
+comment1.params=
+comment1.target=void\ muevete()
+numComments=2
